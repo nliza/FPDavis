@@ -88,12 +88,12 @@ if dataset == 'Adventure Works':
         - Hal ini menunjukkan tren pertumbuhan yang sangat positif, yang bisa disebabkan oleh ekspansi pasar, peningkatan kepercayaan pelanggan, atau mungkin karena promosi dan diskon yang menarik bagi pelanggan.
 
         **Kesimpulan**:
-        - Grafik ini menggambarkan tren penjualan yang sangat positif dan meningkat dari tahun ke tahun. Perusahaan tampaknya berhasil meningkatkan total jumlah pesanan setiap tahunnya, terutama setelah tahun 2002. Strategi pemasaran dan pengembangan produk yang baik kemungkinan besar memainkan peran penting dalam pencapaian ini. Melihat tren yang ada, perusahaan bisa terus mempertahankan dan meningkatkan strategi yang ada untuk menjaga pertumbuhan yang berkelanjutan di masa mendatang.
+        Grafik ini menggambarkan tren penjualan yang sangat positif dan meningkat dari tahun ke tahun. Perusahaan tampaknya berhasil meningkatkan total jumlah pesanan setiap tahunnya, terutama setelah tahun 2002. Strategi pemasaran dan pengembangan produk yang baik kemungkinan besar memainkan peran penting dalam pencapaian ini. Melihat tren yang ada, perusahaan bisa terus mempertahankan dan meningkatkan strategi yang ada untuk menjaga pertumbuhan yang berkelanjutan di masa mendatang.
         """
         st.write(interpretation)
 
     elif visualization_type == 'Composition':
-        st.subheader("Composition: Distribusi Penjualan Produk Berdasarkan Kategori")
+        st.subheader("Composition: Penjualan Produk Berdasarkan Kategori")
         query_composition = """
         SELECT 
             dst.SalesTerritoryCountry AS TerritoryCountry, 
@@ -147,7 +147,7 @@ if dataset == 'Adventure Works':
         - Meskipun demikian, pasar Kanada masih memberikan kontribusi yang berarti bagi penjualan keseluruhan.
 
         **Kesimpulan**:
-        - Diagram pai ini menunjukkan bahwa Amerika Serikat dan Australia adalah dua pasar terbesar bagi Adventure Works, mencakup lebih dari 60% dari total penjualan. Inggris, Jerman, Prancis, dan Kanada juga merupakan pasar penting, meskipun kontribusi mereka lebih kecil dibandingkan dengan Amerika Serikat dan Australia. Informasi ini bisa sangat berharga bagi perusahaan dalam menentukan strategi pemasaran dan distribusi di masa depan. Fokus dapat diarahkan pada mempertahankan dan meningkatkan penjualan di wilayah-wilayah utama, sambil mengeksplorasi peluang untuk meningkatkan kontribusi dari pasar yang lebih kecil.
+        Diagram pai ini menunjukkan bahwa Amerika Serikat dan Australia adalah dua pasar terbesar bagi Adventure Works, mencakup lebih dari 60% dari total penjualan. Inggris, Jerman, Prancis, dan Kanada juga merupakan pasar penting, meskipun kontribusi mereka lebih kecil dibandingkan dengan Amerika Serikat dan Australia. Informasi ini bisa sangat berharga bagi perusahaan dalam menentukan strategi pemasaran dan distribusi di masa depan. Fokus dapat diarahkan pada mempertahankan dan meningkatkan penjualan di wilayah-wilayah utama, sambil mengeksplorasi peluang untuk meningkatkan kontribusi dari pasar yang lebih kecil.
         """
         st.write(interpretation)
 
@@ -228,8 +228,7 @@ if dataset == 'Adventure Works':
         **Distribusi Data**:
 - Sebagian besar produk memiliki harga di bawah 500.
 - Jumlah transaksi menurun seiring dengan kenaikan harga produk.
-
-        **Korelasi Negatif**:
+**Korelasi Negatif**:
 - Terdapat korelasi negatif antara harga produk dan jumlah transaksi. Artinya, produk dengan harga lebih rendah cenderung memiliki jumlah transaksi yang lebih tinggi.
 - Produk dengan harga sangat tinggi (>2000) memiliki jumlah transaksi yang relatif rendah. Ini menunjukkan bahwa produk mahal mungkin memiliki pasar yang lebih terbatas.
         **Outlier**:
@@ -266,9 +265,7 @@ Negara Lain dengan Jumlah Film Signifikan:
 Selanjutnya adalah Selandia Baru, Jerman, Jepang, dan Brasil, meskipun jumlah film dari negara-negara ini jauh lebih rendah dibandingkan dengan Amerika Serikat.
 Selandia Baru berada di posisi kedua, menunjukkan kontribusi signifikan dalam industri film, meskipun jumlah filmnya tidak sebanyak Amerika Serikat.
 Distribusi yang Tidak Merata:
-
-Ada kesenjangan yang cukup besar antara jumlah film dari Amerika Serikat dan negara-negara lainnya. Negara-negara di luar Amerika Serikat memiliki jumlah film yang relatif lebih sedikit, yang menunjukkan konsentrasi produksi film di beberapa negara utama..
-        """
+"""
         st.write(description)
 
     elif visualization_type == 'Composition':
@@ -300,7 +297,7 @@ Adventure (4%):
 Genre petualangan (adventure) memiliki proporsi terkecil dengan 4%. Meskipun demikian, film petualangan tetap memiliki daya tarik tersendiri, terutama bagi penonton yang menikmati eksplorasi, perjalanan, dan kisah-kisah epik.
 
 Kesimpulan
-Dari visualisasi ini, kita dapat melihat bahwa film action, crime, dan drama adalah tiga genre teratas yang paling banyak diproduksi dan disukai oleh penonton berdasarkan dataset IMDB. Sementara itu, genre biografi dan petualangan memiliki proporsi yang lebih kecil namun tetap signifikan. Pemahaman ini dapat membantu para pembuat film, peneliti, dan penggemar film untuk mengenali tren dan preferensi di industri film.
+Dari visualisasi ini, kita dapat melihat bahwa film action, crime, dan drama adalah tiga genre teratas yang paling banyak diproduksi dan disukai oleh penonton berdasarkan dataset IMDB. Sementara itu, genre biografi dan petualangan memiliki proporsi yang lebih kecil namun tetap signifikan.
         """
         st.write(description)
 
@@ -343,9 +340,7 @@ Adventure:
 Rentang rating: sekitar 8.5 hingga 8.6
 Median: sekitar 8.55
 Genre adventure menunjukkan rentang rating yang sangat sempit dengan nilai median yang lebih rendah dibandingkan genre lain, menandakan penilaian yang lebih seragam tetapi cenderung lebih rendah.
-Kesimpulan
-Dari visualisasi ini, kita dapat menyimpulkan bahwa film-film dalam genre drama dan crime umumnya mendapatkan rating yang tinggi dan stabil dari penonton IMDb, sementara genre action menunjukkan variasi yang lebih besar dalam rating. Film biografi cenderung memiliki penilaian yang konsisten dan baik, sedangkan film adventure meskipun dinilai secara seragam, memiliki rating yang lebih rendah dibandingkan genre lainnya.
-        """
+"""
         st.write(description)
 
     elif visualization_type == 'Relationship':
@@ -372,8 +367,7 @@ Film dengan pendapatan akhir pekan pembukaan yang sangat tinggi (di atas $100 ju
 Variasi di Pendapatan Akhir Pekan Pembukaan Rendah:
 
 Film dengan pendapatan akhir pekan pembukaan yang lebih rendah menunjukkan variasi yang lebih besar dalam pendapatan kotor global. Beberapa film dengan pendapatan pembukaan yang rendah tetap berhasil meraih pendapatan global yang cukup tinggi, mungkin karena faktor-faktor seperti ulasan positif, promosi mulut ke mulut, atau kekuatan pasar internasional.
-Distribusi Titik:
-
+**Distribusi Titik**:
 Titik-titik data terdistribusi secara berkelompok pada pendapatan akhir pekan pembukaan yang lebih rendah, dengan beberapa outlier di pendapatan tinggi. Ini menunjukkan bahwa banyak film memiliki pendapatan pembukaan yang lebih sederhana namun ada beberapa blockbuster yang mencetak pendapatan besar baik di pembukaan akhir pekan maupun secara global.
 Kesimpulan
 Visualisasi ini mengungkapkan bahwa terdapat hubungan yang kuat antara pendapatan pembukaan akhir pekan di AS dan Kanada dengan pendapatan kotor global. Pendapatan pembukaan yang tinggi sering kali menjadi indikasi awal kesuksesan global, sementara film-film dengan pembukaan yang lebih rendah memiliki hasil yang lebih bervariasi di pasar global. Informasi ini penting bagi para produser film, distributor, dan pemasar dalam merencanakan strategi rilis dan promosi film.
