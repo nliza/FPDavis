@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import mysql.connector
+import sqlalchemy
 import plotly.express as px
 
 # Fungsi untuk membuat koneksi
@@ -9,7 +9,7 @@ def create_connection():
     db_config = st.secrets["connections"]["mydb"]
     
     # Membuat URL koneksi
-    connection_url = sqlalchemy.engine.url.URL.create(
+    connection_url = sqlalchemy.engine.URL.create(
         drivername=f"{db_config['dialect']}+{db_config['driver']}",
         username=db_config['user'],
         password=db_config['password'],
@@ -28,7 +28,8 @@ def run_query(query):
     df = pd.read_sql(query, conn)
     conn.close()
     return df
-    
+
+
 # Fungsi untuk memuat data IMDB dari CSV
 def load_imdb():
     return pd.read_csv('imdb_top_scrapping.csv')
