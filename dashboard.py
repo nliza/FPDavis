@@ -3,18 +3,32 @@ import pandas as pd
 import mysql.connector
 import plotly.express as px
 
-# Fungsi untuk koneksi ke database Adventure Works
+# Fungsi untuk membuat koneksi
 def create_connection():
-    conn = st.connection(
-        "mydb",
-        type="sql", autocommit=True
+    # Mendapatkan konfigurasi koneksi dari secrets
+    db_config = st.secrets["connections"]["mydb"]
+    
+    # Membuat URL koneksi
+    connection_url = sqlalchemy.engine.url.URL.create(
+        drivername=f"{db_config['dialect']}+{db_config['driver']}",
+        username=db_config['user'],
+        password=db_config['password'],
+        host=db_config['host'],
+        port=db_config['port'],
+        database=db_config['database']
     )
+    
+    # Membuat engine SQLAlchemy
+    engine = sqlalchemy.create_engine(connection_url)
+    return engine.connect()
+
 # Fungsi untuk menjalankan query
 def run_query(query):
     conn = create_connection()
     df = pd.read_sql(query, conn)
     conn.close()
     return df
+    
 # Fungsi untuk memuat data IMDB dari CSV
 def load_imdb():
     return pd.read_csv('imdb_top_scrapping.csv')
