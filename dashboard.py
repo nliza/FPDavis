@@ -3,19 +3,16 @@ import pandas as pd
 import mysql.connector
 import plotly.express as px
 
-# Fungsi untuk koneksi ke database Adventure Works
-def create_connection():
-    return mysql.connector.connect(
-        host="kubela.id",
-        user="davis2024irwan",
-        passwd="wh451n9m@ch1n3",
-        port=3306,
-        database="aw"
-    )
 
 # Fungsi untuk menjalankan query
 def run_query(query):
-    conn = create_connection()
+    conn = mysql.connector.connect(
+        host=st.secret["mysql"]["host"],
+        user=st.secret["mysql"]["user"],
+        password=st.secret["mysql"]["password"],
+        database=st.secret["mysql"]["database"]
+    )
+    
     df = pd.read_sql(query, conn)
     conn.close()
     return df
