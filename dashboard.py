@@ -243,10 +243,10 @@ elif dataset == 'IMDB':
     st.markdown("---")  # Pembatas
 
     if visualization_type == 'Comparison':
-        st.subheader("Comparison: Perbandingan Jumlah Film berdasarkan Negara Asal (Top 10)")
+        st.subheader("Comparison: Perbandingan Jumlah Film berdasarkan Negara Asal")
         country_counts = df['Country of Origin'].value_counts().head(10)
         fig = px.bar(country_counts, x=country_counts.index, y=country_counts.values,
-                     title='Perbandingan Jumlah Film berdasarkan Negara Asal (Top 10)',
+                     title='Perbandingan Jumlah Film berdasarkan Negara Asal',
                      labels={'x': 'Negara Asal', 'y': 'Jumlah Film'},
                      color_discrete_sequence=px.colors.qualitative.Pastel)
         st.plotly_chart(fig)
