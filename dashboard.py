@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import mysql.connector
 import plotly.express as px
-from gtts import gTTS
-import translators as ts
 
 # Fungsi untuk koneksi ke database Adventure Works
 def create_connection():
