@@ -5,12 +5,9 @@ import plotly.express as px
 
 # Fungsi untuk koneksi ke database Adventure Works
 def create_connection():
-    return mysql.connector.connect(
-        host="kubela.id",
-        user="davis2024irwan",
-        passwd="wh451n9m@ch1n3",
-        port=3306,
-        database="aw"
+    conn = st.connection(
+        "mydb",
+        type="sql", autocommit=True
     )
 # Fungsi untuk menjalankan query
 def run_query(query):
